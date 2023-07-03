@@ -1,0 +1,102 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.grid-contrainer {
+  flex: 1;
+  display: grid;
+  position: relative;
+  touch-action: none;
+  overflow: auto;
+}
+
+
+.grid-contrainer .cell {
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  user-select: none;
+}
+
+.grid-contrainer .col-header,
+.grid-contrainer .row-header {
+  font-size: 12px;
+  justify-content: center;
+  position: sticky;
+  background-color: white;
+}
+
+.grid-contrainer .root {
+  position: sticky;
+  background-color: lightgray;
+  border: 1px solid gray;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.grid-contrainer .row-header {
+  top: 25px;
+  left: 0;
+  z-index: 1;
+}
+
+.grid-contrainer .col-header {
+  top: 0;
+  z-index: 2;
+  left: 30px;
+}
+
+
+.grid-contrainer .cell input {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.grid-contrainer .cell.selected {
+  border-color: darkcyan;
+  border-width: 2px;
+}
+
+.grid-contrainer .cell.selected.edit {
+  border-color: darkcyan;
+  border-width: 1px;
+}
+
+.grid-contrainer .cell.selected-formula {
+  border-color: darkcyan;
+  border-width: 2px;
+  border-style: dashed;
+  background-color: lightcyan;
+}
+
+.grid-contrainer .cell.formula {
+  border-color: darkcyan;
+  border-width: 2px;
+  border-style: dashed;
+}
+
+.grid-contrainer .col-header.selected,
+.grid-contrainer .row-header.selected {
+  background-color: lightblue;
+  border: 1px solid #ccc;
+}
+
+.grid-contrainer .cell.error {
+  color: red;
+}
+
+
